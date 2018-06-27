@@ -1,6 +1,5 @@
 package com.boom_co.android.boomcoapp;
 
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,24 +18,50 @@ public class GbeCalcActivity extends AppCompatActivity {
     EditText mArtillery;
     EditText mBarrage;
     EditText mMedkit;
+    TextView mBattle;
+    TextView mRemote;
     TextView mGbeValue;
+    TextView mFlareEnergy;
+    TextView mSmokeEnergy;
+    TextView mShockEnergy;
+    TextView mCritterEnergy;
+    TextView mArtilleryEnergy;
+    TextView mBarrageEnergy;
+    TextView mMedkitEnergy;
+    TextView mBattleEnergy;
+    TextView mRemoteEnergy;
+
+
     int prevFlare;
     int newFlare;
+    int flareEnergy;
     int prevSmoke;
     int newSmoke;
+    int smokeEnergy;
     int prevShock;
     int newShock;
+    int shockEnergy;
     int prevCritter;
     int newCritter;
+    int critterEnergy;
     int prevArtillery;
     int newArtillery;
+    int artilleryEnergy;
     int prevBarrage;
     int newBarrage;
+    int barrageEnergy;
     int newMedkit;
     int prevMedkit;
+    int medkitEnergy;
+    int prevBattle;
+    int newBattle;
+    int battleEnergy;
+    int prevRemote;
+    int newRemote;
+    int remoteEnergy;
     int sum;
     int difference;
-    String suno;
+    String suno; // my temp variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +84,15 @@ public class GbeCalcActivity extends AppCompatActivity {
         mCritter = (EditText) findViewById(R.id.critter);
         mArtillery = (EditText) findViewById(R.id.artillery);
         mBarrage = (EditText) findViewById(R.id.barrage);
-        mMedkit = (EditText) findViewById(R.id.medkit);
+        mMedkit = (EditText) findViewById(R.id.battle);
+        mFlareEnergy = (TextView) findViewById(R.id.flare_energy);
+        mSmokeEnergy = (TextView) findViewById(R.id.smoke_energy);
+        mShockEnergy = (TextView) findViewById(R.id.shock_energy);
+        mCritterEnergy = (TextView) findViewById(R.id.critter_energy);
+        mArtilleryEnergy = (TextView) findViewById(R.id.artillery_energy);
+        mBarrageEnergy = (TextView) findViewById(R.id.barrage_energy);
+        mMedkitEnergy = (TextView) findViewById(R.id.medkit_energy);
+
 
         mFlare.addTextChangedListener(new TextWatcher() {
             @Override
@@ -79,7 +112,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newFlare = 0;
                 }
-                difference = partialSum(newFlare,2,1) - partialSum(prevFlare,2,1);
+                flareEnergy = partialSum(newFlare,2,1);
+                if (flareEnergy == 0) {
+                    mFlareEnergy.setText("");
+                } else {
+                    suno = Integer.toString(flareEnergy);
+                    mFlareEnergy.setText(suno);
+                }
+                difference = flareEnergy - partialSum(prevFlare, 2, 1);
                 sum += difference;
                 prevFlare = newFlare;
                 suno = Integer.toString(sum);
@@ -105,7 +145,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newSmoke = 0;
                 }
-                difference = partialSum(newSmoke,2,1) - partialSum(prevSmoke,2,1);
+                smokeEnergy = partialSum(newSmoke,2,1);
+                if (smokeEnergy == 0) {
+                    mSmokeEnergy.setText("");
+                } else {
+                    suno = Integer.toString(smokeEnergy);
+                    mSmokeEnergy.setText(suno);
+                }
+                difference = smokeEnergy - partialSum(prevSmoke, 2, 1);
                 sum += difference;
                 prevSmoke = newSmoke;
                 suno = Integer.toString(sum);
@@ -132,7 +179,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newShock = 0;
                 }
-                difference = partialSum(newShock,7,5) - partialSum(prevShock,7,5);
+                shockEnergy = partialSum(newShock,7,5);
+                if (shockEnergy == 0) {
+                    mShockEnergy.setText("");
+                } else {
+                    suno = Integer.toString(shockEnergy);
+                    mShockEnergy.setText(suno);
+                }
+                difference = shockEnergy - partialSum(prevShock, 7, 5);
                 sum += difference;
                 prevShock = newShock;
                 suno = Integer.toString(sum);
@@ -158,7 +212,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newCritter = 0;
                 }
-                difference = partialSum(newCritter,8,5) - partialSum(prevCritter,8,5);
+                critterEnergy = partialSum(newCritter,8,5);
+                if (critterEnergy == 0) {
+                    mCritterEnergy.setText("");
+                } else {
+                    suno = Integer.toString(critterEnergy);
+                    mCritterEnergy.setText(suno);
+                }
+                difference = critterEnergy - partialSum(prevCritter, 8, 5);
                 sum += difference;
                 prevCritter = newCritter;
                 suno = Integer.toString(sum);
@@ -185,7 +246,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newArtillery = 0;
                 }
-                difference = partialSum(newArtillery,3,2) - partialSum(prevArtillery,3,2);
+                artilleryEnergy = partialSum(newArtillery,3,2);
+                if (artilleryEnergy == 0) {
+                    mArtilleryEnergy.setText("");
+                } else {
+                    suno = Integer.toString(artilleryEnergy);
+                    mArtilleryEnergy.setText(suno);
+                }
+                difference = artilleryEnergy - partialSum(prevArtillery, 3, 2);
                 sum += difference;
                 prevArtillery = newArtillery;
                 suno = Integer.toString(sum);
@@ -211,7 +279,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newBarrage = 0;
                 }
-                difference = partialSum(newBarrage,10,6) - partialSum(prevBarrage,10,6);
+                barrageEnergy = partialSum(newBarrage,10,6);
+                if (barrageEnergy == 0) {
+                    mBarrageEnergy.setText("");
+                } else {
+                    suno = Integer.toString(barrageEnergy);
+                    mBarrageEnergy.setText(suno);
+                }
+                difference = barrageEnergy - partialSum(prevBarrage, 10, 6);
                 sum += difference;
                 prevBarrage = newBarrage;
                 suno = Integer.toString(sum);
@@ -238,7 +313,14 @@ public class GbeCalcActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     newMedkit = 0;
                 }
-                difference = partialSum(newMedkit,6,3) - partialSum(prevMedkit,6,3);
+                medkitEnergy = partialSum(newMedkit,6,3);
+                if (medkitEnergy == 0) {
+                    mMedkitEnergy.setText("");
+                } else {
+                    suno = Integer.toString(medkitEnergy);
+                    mMedkitEnergy.setText(suno);
+                }
+                difference = medkitEnergy - partialSum(prevMedkit, 6, 3);
                 sum += difference;
                 prevMedkit = newMedkit;
                 suno = Integer.toString(sum);
@@ -249,8 +331,8 @@ public class GbeCalcActivity extends AppCompatActivity {
     }
 
     public int partialSum(int terms, int first, int rate) {
-        int last = first+(terms-1)*rate;
-        return ((terms)*(first+last))/2;
+        int last = first + (terms - 1) * rate;
+        return ((terms) * (first + last)) / 2;
     }
-
 }
+

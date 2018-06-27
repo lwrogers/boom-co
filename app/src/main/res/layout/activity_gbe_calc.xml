@@ -1,123 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.boom_co.android.boomcoapp.GbeCalcActivity">
+    tools:context="com.boom_co.android.boomcoapp.IntelCalcActivity"
+    android:background="@mipmap/bw_wallpaper">
 
-    <LinearLayout
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/transparent_constraint"
+        >
+
+
+        <TextView
+            android:id="@+id/medkit_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/battle"
+            app:layout_constraintLeft_toLeftOf="@+id/barrage_energy"
+            app:layout_constraintRight_toRightOf="@+id/barrage_energy"
+            app:layout_constraintTop_toTopOf="@+id/battle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/barrage_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="@+id/barrage"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/barrage"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/artillery_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/artillery"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            app:layout_constraintRight_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/artillery" />
+
+        <TextView
+            android:id="@+id/critter_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/critter"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            app:layout_constraintRight_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/critter" />
+
+        <TextView
+            android:id="@+id/shock_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/shock"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            app:layout_constraintRight_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/shock" />
+
+        <TextView
+            android:id="@+id/smoke_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/smoke"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            app:layout_constraintRight_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/smoke" />
 
         <EditText
-            android:id="@+id/flare"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:id="@+id/battle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
             android:hint="0"
             android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/flare"/>
-
-        <EditText
-            android:id="@+id/smoke"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="0"
-            android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/smoke"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/shock"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="0"
-            android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/shock"/>
-
-        <EditText
-            android:id="@+id/critter"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="0"
-            android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/critter"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/artillery"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="0"
-            android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/artillery"/>
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/barrage"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/barrage"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
             android:hint="0"
             android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/barrage"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView8"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/artillery"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/medkit"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:id="@+id/artillery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
             android:hint="0"
             android:inputType="number"
-            android:textSize="48sp"
-            android:background="@drawable/medkit"/>
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            android:layout_marginLeft="-11dp"
+            app:layout_constraintLeft_toLeftOf="@+id/critter"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/critter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
+            android:hint="0"
+            android:inputType="number"
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView6"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/shock" />
+
+        <EditText
+            android:id="@+id/shock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
+            android:hint="0"
+            android:inputType="number"
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/smoke" />
+
+        <EditText
+            android:id="@+id/smoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
+            android:hint="0"
+            android:inputType="number"
+            android:textColor="@color/colorCrimson"
+            android:textColorHint="#808080"
+            android:textSize="40sp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/flare"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_quantity"
+            android:hint="0"
+            android:textColorHint="#808080"
+            app:layout_constraintLeft_toRightOf="@+id/imageView2"
+            android:layout_marginLeft="32dp"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            android:textSize="40sp"
+            android:textColor="@color/colorCrimson"
+            android:inputType="number"
+            android:id="@+id/flare"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/flare" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/smoke"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView2"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/shock"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/critter"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView4"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/artillery"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView5"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/barrage"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView6"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/medkit"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView7"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:text="Quantity"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="@+id/flare"
+            app:layout_constraintRight_toRightOf="@+id/flare"
+            tools:layout_editor_absoluteY="4dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="0dp"
+            android:text="Energy"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView12"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/flare_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/colorOrange"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/flare"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintLeft_toLeftOf="@+id/textView13"
+            app:layout_constraintRight_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/gbe_value"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="32dp"
             android:text="0"
-            android:textSize="48sp"
-            android:layout_gravity="center"/>
+            android:textColor="@color/colorYellow"
+            android:textSize="40sp"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/battle" />
 
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/gbe"
+            app:layout_constraintLeft_toRightOf="@+id/gbe_value"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/gbe_value"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintTop_toTopOf="@+id/gbe_value"
+            android:layout_marginTop="0dp" />
 
-
-    </LinearLayout>
-
-</LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

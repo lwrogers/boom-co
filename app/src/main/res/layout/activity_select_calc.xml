@@ -5,13 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.boom_co.android.boomcoapp.SelectCalcActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorDarkGrey">
 
     <Button
+        android:id="@+id/gbe_calc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Gunboat Energy Calculator"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/gunboat"
+        android:textSize="32sp"
         android:onClick="onGbeCalc"/>
 
     <Button
@@ -19,13 +25,23 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Troop Damage Calculator"
-        android:onClick="onTdCalc"/>
+        android:onClick="onTdCalc"
+        android:background="@drawable/damage"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="32sp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Intel Count Calculator"
-        android:onClick="onIntelCalc"/>
+        android:onClick="onIntelCalc"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/intel"
+        android:textSize="32sp"/>
 
 </LinearLayout>
